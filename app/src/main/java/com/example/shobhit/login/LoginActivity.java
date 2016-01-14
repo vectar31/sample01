@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -55,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
         member3 = (EditText) findViewById(R.id.member3);
         entry3= (EditText) findViewById(R.id.entry3);
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
     }
 
     private void registerUser(){
@@ -117,13 +120,27 @@ public class LoginActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.refresh){
+            clearfields();
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clearfields(){
+        teamname.setText("");
+        member1.setText("");
+        entry1.setText("");
+        member2.setText("");
+        entry2.setText("");
+        member3.setText("");
+        entry3.setText("");
     }
 
     public void submit(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         registerUser();
+        clearfields();
         startActivity(intent);
     }
 }
