@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
         member3.setText("");
         entry3.setText("");
     }
-
+//
     public void submit(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         registerUser();
