@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void registerUser(){
+
         final String team = teamname.getText().toString().trim();
         final String name1 = member1.getText().toString().trim();
         final String entryno1 = entry1.getText().toString().trim();
@@ -136,11 +137,64 @@ public class LoginActivity extends AppCompatActivity {
         member3.setText("");
         entry3.setText("");
     }
-//
+//  Validation code
+    public boolean validatename(String name)
+    {
+        boolean result=true;
+        for(int index=0;index<name.length();index++)
+        {
+            char ch=name.charAt(index);
+            if(!((ch>=65&&ch<=90)||(ch>=97&&ch<=122)||ch==' '))
+            {
+                result=false;
+                break;
+            }
+        }
+        return result;
+    }
+    public boolean validatedata()
+    {
+        boolean result=true;
+        String teamnamecheck=teamname.getText().toString();
+        String member1check=member1.getText().toString();
+        String member2check=member2.getText().toString();
+        String member3check=member3.getText().toString();
+        if(!(validatename(teamnamecheck)))
+        {
+            result=false;
+            teamname.setError("Invalid. Find better ones");
+        }
+        else if(!(validatename(member1check)))
+        {
+            result=false;
+            member1.setError("Invalid. Forgot your name?");
+        }
+        else if(!(validatename(member2check)))
+        {
+            result=false;
+            member2.setError("Invalid. Forgot your name?");
+        }
+        else if(!(validatename(member3check)))
+        {
+            result=false;
+            member3.setError("Invalid. Forgot your name?");
+        }
+        else
+        {
+            result=true;
+        }
+        return result;
+
+    }
     public void submit(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        registerUser();
+        boolean checkdata=validatedata();
         clearfields();
-        startActivity(intent);
+        if(checkdata)
+        {
+            registerUser();
+            startActivity(intent);
+        }
+
     }
 }
