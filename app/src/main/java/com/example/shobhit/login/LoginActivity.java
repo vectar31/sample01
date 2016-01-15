@@ -152,6 +152,37 @@ public class LoginActivity extends AppCompatActivity {
         }
         return result;
     }
+    public boolean isCaharacter(char ch)
+    {
+        if((ch>=65&&ch<=90)||(ch>=97&&ch<=122))
+            return true;
+        return false;
+    }
+    public boolean validateEntryNmber(String entrynumber)
+    {
+        boolean result=true;
+        if(entrynumber.length()<11)
+            result=false;
+        String temp=entrynumber.substring(0, 4);
+        if(!(temp.equals("2014")||temp.equals("2013")||temp.equals("2012")||temp.equals("2011")||temp.equals("2010")||temp.equals("2009")||temp.equals("2008")))
+        {
+            result=false;
+        }
+        if(!(isCaharacter(entrynumber.charAt(4))&&isCaharacter(entrynumber.charAt(5))))
+        {
+            result=false;
+        }
+        for(int index=6;index<entrynumber.length();index++)
+        {
+            char ch=entrynumber.charAt(index);
+            if (ch <= 48 && ch>= 57)
+            {
+                result=false;
+                break;
+            }
+        }
+        return result;
+    }
     public boolean validatedata()
     {
         boolean result=true;
@@ -159,6 +190,9 @@ public class LoginActivity extends AppCompatActivity {
         String member1check=member1.getText().toString();
         String member2check=member2.getText().toString();
         String member3check=member3.getText().toString();
+        String entry1check=entry1.getText().toString();
+        String entry2check=entry2.getText().toString();
+        String entry3check=entry3.getText().toString();
         if(!(validatename(teamnamecheck)))
         {
             result=false;
@@ -178,6 +212,21 @@ public class LoginActivity extends AppCompatActivity {
         {
             result=false;
             member3.setError("Invalid. Forgot your name?");
+        }
+        else if(!(validateEntryNmber(entry1check)))
+        {
+            result=false;
+            entry1.setError("Invalid, never marked your attendance?");
+        }
+        else if(!(validateEntryNmber(entry2check)))
+        {
+            result=false;
+            entry2.setError("Invalid, never marked your attendance?");
+        }
+        else if(!(validateEntryNmber(entry3check)))
+        {
+            result=false;
+            entry3.setError("Invalid, never marked your attendance?");
         }
         else
         {
