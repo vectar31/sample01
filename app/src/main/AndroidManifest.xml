@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shobhit.login">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Testing -->
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -26,6 +28,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.shobhit.login.LoginActivity" />
         </activity>
+        <activity
+            android:name=".registration_unsuccessful"
+            android:label="@string/title_activity_registration_unsuccessful"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
-<!-- Testing  -->
+
 </manifest>

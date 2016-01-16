@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-
+    boolean registration_status=false;
     private static final String REGISTER_URL = "http://agni.iitd.ernet.in/cop290/assign0/register/";
 
     public static final String KEY_TEAMNAME = "teamname";
@@ -93,12 +93,10 @@ public class LoginActivity extends AppCompatActivity {
                 params.put(KEY_NAME2, name2);
                 params.put(KEY_ENTRY3,entryno3);
                 params.put(KEY_NAME3, name3);
-
                 return params;
             }
 
         };
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
@@ -160,28 +158,8 @@ public class LoginActivity extends AppCompatActivity {
     }
     public boolean validateEntryNmber(String entrynumber)
     {
-        boolean result=true;
-        if(entrynumber.length()<11)
-            result=false;
-        String temp=entrynumber.substring(0, 4);
-        if(!(temp.equals("2014")||temp.equals("2013")||temp.equals("2012")||temp.equals("2011")||temp.equals("2010")||temp.equals("2009")||temp.equals("2008")))
-        {
-            result=false;
-        }
-        if(!(isCaharacter(entrynumber.charAt(4))&&isCaharacter(entrynumber.charAt(5))))
-        {
-            result=false;
-        }
-        for(int index=6;index<entrynumber.length();index++)
-        {
-            char ch=entrynumber.charAt(index);
-            if (ch <= 48 && ch>= 57)
-            {
-                result=false;
-                break;
-            }
-        }
-        return result;
+        System.out.print(entrynumber);
+        return true;
     }
     public boolean validatedata()
     {
@@ -213,8 +191,34 @@ public class LoginActivity extends AppCompatActivity {
             result=false;
             member3.setError("Invalid. Forgot your name?");
         }
+        else if(teamnamecheck.equals(""))
+        {
+            result=false;
+            teamname.setError("You would want to fill this.");
+        }
+        else if(member1check.equals(""))
+        {
+            result=false;
+            member1.setError("Fill a name!");
+        }
+        else if(member2check.equals(""))
+        {
+            result=false;
+            member2.setError("Fill a name!");
+        }
+        else if(entry1check.equals(""))
+        {
+            result=false;
+            entry1.setError("Can't be left empty!");
+        }
+        else if(entry2check.equals(""))
+        {
+            result=false;
+            entry2.setError("Can't be left empty!");
+        }
 
-        /*
+
+
 
         else if(!(validateEntryNmber(entry1check)))
         {
@@ -232,7 +236,6 @@ public class LoginActivity extends AppCompatActivity {
             entry3.setError("Invalid, never marked your attendance?");
         }
 
-        */
 
 
         else
@@ -244,6 +247,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void submit(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Intent intent2 = new Intent(this, registration_unsuccessful.class);
         boolean checkdata=validatedata();
         clearfields();
         if(checkdata)

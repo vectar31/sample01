@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:hint="Member 3"
+                android:hint="Member 3 (optional)"
                 android:inputType="text"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -133,7 +133,7 @@
 
         <Button
             android:id="@+id/btn"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
