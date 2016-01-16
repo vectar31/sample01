@@ -213,6 +213,9 @@ public class LoginActivity extends AppCompatActivity {
             result=false;
             member3.setError("Invalid. Forgot your name?");
         }
+
+        /*
+
         else if(!(validateEntryNmber(entry1check)))
         {
             result=false;
@@ -228,6 +231,10 @@ public class LoginActivity extends AppCompatActivity {
             result=false;
             entry3.setError("Invalid, never marked your attendance?");
         }
+
+        */
+
+
         else
         {
             result=true;
