@@ -247,7 +247,8 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void submit(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        Intent intent2 = new Intent(this, registration_unsuccessful.class);
+        Intent intent2 = new Intent(this, landing_page.class);
+        startActivity(intent2);
         boolean checkdata=validatedata();
         clearfields();
         if(checkdata)
