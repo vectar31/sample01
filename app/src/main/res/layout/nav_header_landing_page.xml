@@ -14,11 +14,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="352dp"
+        android:layout_width="100dp"
         android:layout_height="69dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/ic_launcher"
-        android:layout_weight="0.72" />
+        android:src="@drawable/users"
+        android:layout_weight="0.72"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="match_parent"

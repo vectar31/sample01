@@ -137,15 +137,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="#e3e3e3"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="18dp"
             android:layout_marginLeft="70dp"
             android:layout_marginRight="70dp"
-            android:clickable="false"
+
             android:onClick="submit"
 
-            android:background="@drawable/button_shape"/>
+            android:background="#198787"/>
 
     </LinearLayout>
 </ScrollView>
