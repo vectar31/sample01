@@ -83,14 +83,16 @@ public class landing_page extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            goto_about_app();
             
         } else if (id == R.id.nav_gallery) {
             goto_about_us();
 
         } else if (id == R.id.nav_slideshow) {
+            gotohelp();
 
         } else if (id == R.id.nav_manage) {
-
+            gototools();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -101,6 +103,7 @@ public class landing_page extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     public void goto_about_us()
     {
         Intent intent4 = new Intent(this, about_us.class);
@@ -110,5 +113,20 @@ public class landing_page extends AppCompatActivity
     {
         Intent intent3 = new Intent(this, LoginActivity.class);
         startActivity(intent3);
+    }
+    public void gotohelp()
+    {
+        Intent intent5 = new Intent(this, Help.class);
+        startActivity(intent5);
+    }
+    public void gototools()
+    {
+        Intent intent6 = new Intent(this, Tools.class);
+        startActivity(intent6);
+    }
+    public void goto_about_app()
+    {
+        Intent intent7 = new Intent(this, AboutApp.class);
+        startActivity(intent7);
     }
 }

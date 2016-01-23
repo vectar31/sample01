@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@drawable/background"
-    tools:context="com.example.shobhit.login.registration_unsuccessful">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.shobhit.login.about_us">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_registration_unsuccessful" />
+    <include layout="@layout/content_about_us" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/background"
-    tools:context="com.example.shobhit.login.registration_unsuccessful">
+    tools:context="com.example.shobhit.login.Tools">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_registration_unsuccessful" />
+    <include layout="@layout/content_tools" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
